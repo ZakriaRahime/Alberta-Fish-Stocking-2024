@@ -41,9 +41,9 @@ var lyr_FishStocking2024_2 = new ol.layer.Vector({
                 declutter: false,
                 source:jsonSource_FishStocking2024_2, 
                 style: style_FishStocking2024_2,
-                popuplayertitle: "Fish Stocking (2024)",
+                popuplayertitle: "Fish Stocking 2024",
                 interactive: true,
-    title: 'Fish Stocking (2024)<br />\
+    title: 'Fish Stocking 2024<br />\
     <img src="styles/legend/FishStocking2024_2_0.png" /> 0 - 1807<br />\
     <img src="styles/legend/FishStocking2024_2_1.png" /> 1807 - 5600<br />\
     <img src="styles/legend/FishStocking2024_2_2.png" /> 5600 - 11500<br />\
