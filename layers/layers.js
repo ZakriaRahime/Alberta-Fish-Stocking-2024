@@ -1,8 +1,10 @@
+ol.proj.proj4.register(proj4);
+//ol.proj.get("EPSG:32610").setExtent([84063.975121, 5434458.966225, 2032528.490960, 6754225.584508]);
 var wms_layers = [];
 
 var format_AlbertaBoundary_0 = new ol.format.GeoJSON();
 var features_AlbertaBoundary_0 = format_AlbertaBoundary_0.readFeatures(json_AlbertaBoundary_0, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32610'});
 var jsonSource_AlbertaBoundary_0 = new ol.source.Vector({
     attributions: ' ',
 });
@@ -17,7 +19,7 @@ var lyr_AlbertaBoundary_0 = new ol.layer.Vector({
             });
 var format_Water_1 = new ol.format.GeoJSON();
 var features_Water_1 = format_Water_1.readFeatures(json_Water_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32610'});
 var jsonSource_Water_1 = new ol.source.Vector({
     attributions: ' ',
 });
@@ -32,7 +34,7 @@ var lyr_Water_1 = new ol.layer.Vector({
             });
 var format_FishStocking2024_2 = new ol.format.GeoJSON();
 var features_FishStocking2024_2 = format_FishStocking2024_2.readFeatures(json_FishStocking2024_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32610'});
 var jsonSource_FishStocking2024_2 = new ol.source.Vector({
     attributions: ' ',
 });
@@ -61,9 +63,9 @@ lyr_FishStocking2024_2.set('fieldAliases', {'DISTRICT': 'DISTRICT', 'WATERBODY':
 lyr_AlbertaBoundary_0.set('fieldImages', {'PRUID': 'TextEdit', 'DGUID': 'TextEdit', 'PRNAME': 'TextEdit', 'PRENAME': 'TextEdit', 'PRFNAME': 'TextEdit', 'PREABBR': 'TextEdit', 'PRFABBR': 'TextEdit', 'LANDAREA': 'TextEdit', });
 lyr_Water_1.set('fieldImages', {'HYDROUID': 'TextEdit', 'NAME': 'TextEdit', 'RANK': 'Range', 'PRUID': 'TextEdit', });
 lyr_FishStocking2024_2.set('fieldImages', {'DISTRICT': 'TextEdit', 'WATERBODY': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'SPECIES': 'TextEdit', 'GENOTYPE': 'TextEdit', 'STOCKED -': 'TextEdit', 'STOCKING N': 'TextEdit', 'PLANNED ST': 'TextEdit', 'Map Author': 'TextEdit', 'NumStock': 'Range', });
-lyr_AlbertaBoundary_0.set('fieldLabels', {'PRUID': 'no label', 'DGUID': 'no label', 'PRNAME': 'no label', 'PRENAME': 'no label', 'PRFNAME': 'no label', 'PREABBR': 'no label', 'PRFABBR': 'no label', 'LANDAREA': 'no label', });
+lyr_AlbertaBoundary_0.set('fieldLabels', {'PRUID': 'inline label - always visible', 'DGUID': 'no label', 'PRNAME': 'no label', 'PRENAME': 'no label', 'PRFNAME': 'no label', 'PREABBR': 'no label', 'PRFABBR': 'no label', 'LANDAREA': 'no label', });
 lyr_Water_1.set('fieldLabels', {'HYDROUID': 'no label', 'NAME': 'no label', 'RANK': 'no label', 'PRUID': 'no label', });
-lyr_FishStocking2024_2.set('fieldLabels', {'DISTRICT': 'inline label - visible with data', 'WATERBODY': 'inline label - visible with data', 'Latitude': 'hidden field', 'Longitude': 'hidden field', 'SPECIES': 'inline label - visible with data', 'GENOTYPE': 'inline label - visible with data', 'STOCKED -': 'hidden field', 'STOCKING N': 'hidden field', 'PLANNED ST': 'hidden field', 'Map Author': 'header label - always visible', 'NumStock': 'inline label - visible with data', });
+lyr_FishStocking2024_2.set('fieldLabels', {'DISTRICT': 'inline label - always visible', 'WATERBODY': 'inline label - always visible', 'Latitude': 'hidden field', 'Longitude': 'hidden field', 'SPECIES': 'inline label - always visible', 'GENOTYPE': 'inline label - always visible', 'STOCKED -': 'hidden field', 'STOCKING N': 'hidden field', 'PLANNED ST': 'hidden field', 'Map Author': 'header label - always visible', 'NumStock': 'inline label - always visible', });
 lyr_FishStocking2024_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
